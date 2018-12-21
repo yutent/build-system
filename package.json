@@ -1,0 +1,94 @@
+{
+  "name": "build-system",
+  "displayName": "sublime build system",
+  "description": "🔥 类似sublime的Build System功能, 方便快速调试一些代码片断或想法。",
+  "version": "0.9.0",
+  "publisher": "yutent",
+  "author": "Yutent [@yutent]",
+  "icon": "logo.png",
+  "engines": {
+    "vscode": "^1.28.0"
+  },
+  "categories": ["Programming Languages", "Other"],
+  "activationEvents": ["*"],
+  "main": "./index",
+  "contributes": {
+    "commands": [
+      {
+        "command": "BuildSystem.build",
+        "title": "Build and run..."
+      },
+      {
+        "command": "BuildSystem.stop",
+        "title": "Stop run..."
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "BuildSystem.build",
+        "key": "cmd+alt+b"
+      },
+      {
+        "command": "BuildSystem.stop",
+        "key": "cmd+alt+c"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "!inOutput",
+          "command": "BuildSystem.build",
+          "title": "Build and run this file"
+        },
+        {
+          "when": "inOutput",
+          "command": "BuildSystem.stop",
+          "group": "Stop run this file"
+        }
+      ]
+    },
+    "configuration": {
+      "type": "object",
+      "title": "Sublime Build System 配置",
+      "properties": {
+        "BuildSystem.saveBeforeBuild": {
+          "type": "boolean",
+          "default": true,
+          "description": "编译之前先保存文件"
+        },
+        "BuildSystem.runInTerminal": {
+          "type": "boolean",
+          "default": false,
+          "description": "是否使用终端来运行编译结果"
+        }
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yutent/build-system.git"
+  },
+  "keywords": [
+    "run code",
+    "sublime",
+    "build",
+    "system",
+    "sublime build system",
+    "javascript",
+    "typescript",
+    "nodejs",
+    "python",
+    "yutent"
+  ],
+  "scripts": {
+    "test": "node ./node_modules/vscode/bin/test"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vscode": "^1.1.21"
+  },
+  "dependencies": {
+    "iofs": "^1.1.0",
+    "tree-kill": "^1.2.1"
+  }
+}
