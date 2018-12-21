@@ -16,7 +16,7 @@ function activate(ctx) {
   BuildSystem.__init__(conf)
 
   vsc.window.onDidCloseTerminal(() => {
-    // BuildSystem.onDidCloseTerminal()
+    // todo...
   })
 
   const build = vsc.commands.registerCommand('BuildSystem.build', _ => {

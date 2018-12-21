@@ -1,6 +1,7 @@
 .vscode/**
-test/**
 .vscode-test/**
+test/**
 package-lock.json
 .gitignore
+.travis.yml
 
