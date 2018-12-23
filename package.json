@@ -2,7 +2,7 @@
   "name": "build-system",
   "displayName": "sublime build system",
   "description": "🔥 类似sublime的Build System功能, 方便快速调试一些代码片断或想法。",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "publisher": "yutent",
   "author": "Yutent [@yutent]",
   "icon": "logo.png",

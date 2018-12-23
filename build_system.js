@@ -61,7 +61,6 @@ const BuildSystem = {
             return true
           })
           .then(saved => {
-            log(this.__DOC__, saved)
             if (saved) {
               this.__start__()
             }
@@ -91,7 +90,6 @@ const BuildSystem = {
   __start__() {
     this.__parseCmd__()
 
-    log(this.__CMD__)
     if (!this.__CMD__) {
       return
     }
@@ -107,7 +105,9 @@ const BuildSystem = {
   __parseCmd__() {
     let firstLine = this.__DOC__.lineAt(0).text
     let ext = path.extname(this.__DOC__.fileName)
+    let file = path.basename(this.__DOC__.fileName)
     let lang = EXTS[ext]
+
     if (firstLine.startsWith('#!')) {
       lang = firstLine.slice(2)
     }
@@ -122,7 +122,11 @@ const BuildSystem = {
       }
       return vsc.window.showInformationMessage('不支持的语言...')
     }
-    this.__CMD__ = `${lang} "${this.__DOC__.fileName}"`
+    if (ext === '.json') {
+      this.__CMD__ = lang
+    } else {
+      this.__CMD__ = `${lang} "${file}"`
+    }
   },
 
   // 在终端内运行
