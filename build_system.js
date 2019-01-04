@@ -26,6 +26,7 @@ const EXTS = {
   '.js': 'node',
   '.json': 'npm start',
   '.py': 'python -u',
+  '.php': 'php',
   '.sh': 'bash',
   '.swift': 'swift',
   '.ts': 'ts-note'
