@@ -19,6 +19,12 @@ function activate(ctx) {
     // todo...
   })
 
+  vsc.workspace.onDidChangeConfiguration(_ => {
+    let conf = vsc.workspace.getConfiguration('BuildSystem')
+
+    BuildSystem.__init__(conf)
+  })
+
   const build = vsc.commands.registerCommand('BuildSystem.build', _ => {
     BuildSystem.build()
   })
