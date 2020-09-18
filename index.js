@@ -26,6 +26,7 @@ function activate(ctx) {
   })
 
   const build = vsc.commands.registerCommand('BuildSystem.build', _ => {
+    BuildSystem.stop()
     BuildSystem.build()
   })
 

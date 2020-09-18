@@ -24,6 +24,8 @@ const EXTS = {
   '.dart': 'dart',
   '.go': 'go run',
   '.js': 'node',
+  '.cjs': 'node',
+  '.mjs': 'node',
   '.json': 'npm start',
   '.py': 'python -u',
   '.php': 'php',
