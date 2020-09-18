@@ -12,6 +12,8 @@
 > - .dart
 > - .go
 > - .js
+> - .cjs
+> - .mjs
 > - .json (调用`npm start`来执行)
 > - .py
 > - .sh
