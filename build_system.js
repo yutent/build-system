@@ -31,7 +31,7 @@ const EXTS = {
   '.php': 'php',
   '.sh': 'bash',
   '.swift': 'swift',
-  '.ts': 'ts-note'
+  '.ts': 'ts-node'
 }
 
 const BuildSystem = {
